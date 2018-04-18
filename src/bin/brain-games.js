@@ -2,8 +2,6 @@
 
 import askUserName from '..';
 
-console.log('Welcome to the Brain Games!\n');
-
-// вызываем функцию. которая спрашивает имя
+// call function to ask the name
 askUserName();
 
