@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import runGame from '../index';
+import startCalcGame from '../games/calc';
 
-// call function to ask the name
-runGame('What is the result of the expression?');
+startCalcGame();

@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-import runGame from '../index';
+import runGame from '..';
 
-// call function to ask the name
 runGame('');
 
