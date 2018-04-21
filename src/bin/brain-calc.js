@@ -3,5 +3,4 @@
 import runGame from '../index';
 
 // call function to ask the name
-runGame('');
-
+runGame('What is the result of the expression?');

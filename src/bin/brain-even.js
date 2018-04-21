@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import evenGame from '../even';
+import runGame from '../index';
 
-evenGame(3);
+// call function to ask the name
+runGame('Answer "yes" if number even otherwise answer "no".');
