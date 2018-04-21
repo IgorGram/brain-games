@@ -1,3 +1,3 @@
 import runGame from '../index';
 
-runGame()
+runGame();
