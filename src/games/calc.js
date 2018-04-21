@@ -10,19 +10,19 @@ const getRandomNumber = (min, max) => {
 const getGamePair = () => {
   const operatorsArr = ['+', '-', '*'];
   const firstNumber = getRandomNumber(1, 30);
-  const secondtNumber = getRandomNumber(1, 30);
+  const secondNumber = getRandomNumber(1, 30);
   const operator = operatorsArr[getRandomNumber(0, 2)];
-  const randomExpression = `${firstNumber} ${operator} ${secondtNumber}`;
+  const randomExpression = `${firstNumber} ${operator} ${secondNumber}`;
   let correctAnswer;
   switch (operator) {
     case '+':
-      correctAnswer = firstNumber + secondtNumber;
+      correctAnswer = firstNumber + secondNumber;
       break;
     case '-':
-      correctAnswer = firstNumber - secondtNumber;
+      correctAnswer = firstNumber - secondNumber;
       break;
     case '*':
-      correctAnswer = firstNumber * secondtNumber;
+      correctAnswer = firstNumber * secondNumber;
       break;
     default:
       break;
