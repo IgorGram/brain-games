@@ -1,25 +1,16 @@
 import { cons } from 'hexlet-pairs';
 import runGame from '..';
 
-const getProgressionString = (length, startNumber, step, indexFadeNumber) => {
-  let number = startNumber;
-  if (length === indexFadeNumber) {
-    number = '..';
-  }
-  if (length === 1) {
-    return `${number}`;
-  }
-  return `${number} ${getProgressionString(length - 1, startNumber + step, step, indexFadeNumber)}`;
-};
+// generation member of progression
+const getProgressionMember = (startNumber, index, step) => startNumber + ((index) * step);
 
-
-const getCorrectAnswer = (progression, step, startNumber) => {
-  const progresArr = progression.split(' ');
-  const indexFadeNumber = progresArr.indexOf('..');
-  if (indexFadeNumber === 0) {
-    return `${startNumber}`;
+const getProgression = (length, startNumber, step) => {
+  const progressionArr = [startNumber];
+  for (let i = 1; i < length; i += 1) {
+    const member = getProgressionMember(startNumber, i, step);
+    progressionArr.push(member);
   }
-  return `${Number(progresArr[indexFadeNumber - 1]) + step}`;
+  return progressionArr;
 };
 
 const getRundomNumber = (min, max) => {
@@ -29,12 +20,15 @@ const getRundomNumber = (min, max) => {
 };
 // get pair of question and correct answer
 const getGamePair = () => {
-  const startNumber = getRundomNumber(1, 20);
+  const startNumber = getRundomNumber(0, 20);
   const step = getRundomNumber(1, 5);
-  const indexFadeNumber = getRundomNumber(1, 10);
-  const progression = getProgressionString(10, startNumber, step, indexFadeNumber);
-  const correctAnswer = getCorrectAnswer(progression, step, startNumber);
-  return cons(progression, correctAnswer);
+  const length = 10;
+  const progression = getProgression(length, startNumber, step);
+  const indexFadeNumber = getRundomNumber(0, 9);
+  const correctNumber = progression[indexFadeNumber];
+  progression[indexFadeNumber] = '..';
+  const stringProgression = progression.join(' ');
+  return cons(stringProgression, String(correctNumber));
 };
 // start game
 const startEvenGame = () => {
