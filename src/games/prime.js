@@ -18,10 +18,10 @@ const isCorrect = (num) => {
     }
   }
   return true;
-}
+};
 // get pair of question and correct answer
 const getGamePair = () => {
-  const randomNumber = getRundomNumber(1, 100);
+  const randomNumber = getRundomNumber(1, 20);
   const correctAnswer = isCorrect(randomNumber) ? 'yes' : 'no';
   return cons(randomNumber, correctAnswer);
 };
