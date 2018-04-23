@@ -1,5 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import runGame from '..';
+import getRandomNumber from '../utils/utils';
 
 // generation member of progression
 const getProgressionMember = (startNumber, index, step) => startNumber + ((index) * step);
@@ -13,18 +14,14 @@ const getProgression = (length, startNumber, step) => {
   return progressionArr;
 };
 
-const getRundomNumber = (min, max) => {
-  let randomNumber = min + (Math.random() * ((max + 1) - min));
-  randomNumber = Math.floor(randomNumber);
-  return randomNumber;
-};
+
 // get pair of question and correct answer
 const getGamePair = () => {
-  const startNumber = getRundomNumber(0, 20);
-  const step = getRundomNumber(1, 5);
+  const startNumber = getRandomNumber(0, 20);
+  const step = getRandomNumber(1, 5);
   const length = 10;
   const progression = getProgression(length, startNumber, step);
-  const indexFadeNumber = getRundomNumber(0, 9);
+  const indexFadeNumber = getRandomNumber(0, 9);
   const correctNumber = progression[indexFadeNumber];
   progression[indexFadeNumber] = '..';
   const stringProgression = progression.join(' ');

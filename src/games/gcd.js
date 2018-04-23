@@ -1,11 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import runGame from '..';
-
-const getRandomNumber = (min, max) => {
-  let randomNumber = min + (Math.random() * ((max + 1) - min));
-  randomNumber = Math.floor(randomNumber);
-  return randomNumber;
-};
+import getRandomNumber from '../utils/utils';
 
 const getGcd = (a, b) => {
   if (b > 0) {

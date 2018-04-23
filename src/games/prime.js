@@ -1,12 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import runGame from '..';
-
-
-const getRundomNumber = (min, max) => {
-  let randomNumber = min + (Math.random() * ((max + 1) - min));
-  randomNumber = Math.floor(randomNumber);
-  return randomNumber;
-};
+import getRandomNumber from '../utils/utils';
 
 const isCorrect = (num) => {
   if (num <= 1) {
@@ -21,7 +15,7 @@ const isCorrect = (num) => {
 };
 // get pair of question and correct answer
 const getGamePair = () => {
-  const randomNumber = getRundomNumber(1, 20);
+  const randomNumber = getRandomNumber(1, 20);
   const correctAnswer = isCorrect(randomNumber) ? 'yes' : 'no';
   return cons(randomNumber, correctAnswer);
 };
